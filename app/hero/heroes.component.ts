@@ -42,10 +42,6 @@ export class HeroesComponent implements OnInit {
     this._router.navigate(['HeroCreate']);
   }
 
-  gotoCreateDynamic() {
-    this._router.navigate(['HeroCreateDynamic']);
-  }
-
   gotoDetail() {
     this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
   }
