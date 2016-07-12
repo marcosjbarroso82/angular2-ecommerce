@@ -1,24 +1,24 @@
-import { HEROES }               from './mock-heroes';
+import { PRODUCTS }               from './mock-products';
 import { Injectable }           from '@angular/core';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 
-import { Hero } from './hero';
+import { Product } from './product';
 
 @Injectable()
-export class HeroService {
+export class ProductService {
   constructor(public http: Http) { }
 
-  getHeroes() {
+  getProducts() {
     return this.http.get('http://localhost:8000/api/heroes/');
   }
 
-  getHero(id: number) {
+  getProduct(id: number) {
     return this.http.get('http://localhost:8000/api/heroes/' + id + '/');
   }
 
-  createHero(hero: Hero) {
-    let body = JSON.stringify(hero);
+  createProduct(product: Product) {
+    let body = JSON.stringify(product);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://localhost:8000/api/heroes/', body, options);

@@ -2,10 +2,10 @@ import { Component, provide } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { HeroService } from './hero/hero.service';
-import { HeroesComponent } from './hero/heroes.component';
-import { HeroDetailComponent } from './hero/hero-detail.component';
-import { HeroCreateComponent } from './hero/hero-create.component';
+import { ProductService } from './product/product.service';
+import { ProductsComponent } from './product/product.component';
+import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductCreateComponent } from './product/product-create.component';
 import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesario
 
 
@@ -15,7 +15,7 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
     <h1>{{title}}</h1>
     <nav>
       <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Heroes']">Heroes</a>
+      <a [routerLink]="['Products']">Products</a>
     </nav>
     <router-outlet></router-outlet>  
   `,
@@ -23,7 +23,7 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
   providers: [
     ROUTER_PROVIDERS, 
     provide(APP_BASE_HREF, { useValue: '/' }),
-    HeroService
+    ProductService
   ],
   styleUrls: ['app/app.component.css']
 })
@@ -36,23 +36,23 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
   },
   {
     path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
+    name: 'ProductDetail',
+    component: ProductDetailComponent
   },
   {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
+    path: '/products',
+    name: 'Products',
+    component: ProductsComponent
   },
   {
     path: '/create',
-    name: 'HeroCreate',
-    component: HeroCreateComponent
+    name: 'ProductCreate',
+    component: ProductCreateComponent
   },
   
 ])
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Tour of Products';
   
 
  }
