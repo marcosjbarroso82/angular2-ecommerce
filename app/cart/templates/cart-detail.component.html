@@ -1,0 +1,13 @@
+<div *ngIf="cart">
+  <h2>Cart details!</h2>
+  <ul>
+    <li>
+        <label>id: </label>{{cart.id}}
+    </li>
+    <li>
+      <label>user: </label>
+      <input [(ngModel)]="cart.user" placeholder="user" />  
+    </li>
+  </ul>
+  <button (click)="goBack()">Back</button>
+</div>

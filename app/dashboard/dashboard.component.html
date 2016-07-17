@@ -1,8 +1,23 @@
-<h3>Top Products</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let product of products" (click)="gotoDetail(product)" class="col-1-4">
-    <div class="module product">
-      <h4>{{product.name}}</h4>
-    </div>
-  </div>
+<h2>Dashboard</h2>
+
+<div>
+  <div style="border: 1px solid black"><cart-detail></cart-detail></div>
+  <div style="border: 1px solid black"><product-list></product-list></div>
+  
+  <h3>Products</h3>
+  <table style="border=1px solid black">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>stock</th>
+    </tr>
+    <tr *ngFor="let product of products" >
+      <td><span (click)="gotoDetail(product)" >detalle</span></td>
+      <td><span>{{product.id}}</span></td>
+      <td><span>{{product.name}}</span></td>
+      <td><span>{{product.stock}}</span></td>
+    </tr>
+  </table>
+  
 </div>
+  

@@ -2,17 +2,29 @@
 
 <h2>Products</h2>
 <p><a (click)="gotoCreate()">ProductCreate</a></p>
-<ul class="product">
-  <li *ngFor="let product of products"
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>select</th>
+  </tr>
+<tbody class="product">
+  <tr *ngFor="let product of products"
     [class.selected]="product === selectedProduct"
-    (click)="onSelect(product)">
-    <span class="badge">{{product.id}}</span> {{product.name}}
-  </li>
-</ul>
+    >
+
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.available_stock}}</td>
+    <td><button (click)="onSelect(product)">select</button></td>
+
+  </tr>
+</tbody>
+</table>
 
 <div *ngIf="selectedProduct">
-  <h2>
-    {{selectedProduct.name | uppercase}} is my product
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
+  <p>
+    Selected Product: {{selectedProduct.name | uppercase}}
+  </p>
+  <button (click)="gotoDetail()">Go To Product Details</button>
 </div>

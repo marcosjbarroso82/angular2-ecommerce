@@ -8,7 +8,7 @@ import { OnInit }              from '@angular/core';
 import { ProductService }         from './product.service';
 
 @Component({
-  selector: 'products',
+  selector: 'product-list',
   templateUrl: '/app/product/templates/product.component.html',
   styleUrls:  ['/app/product/css/product.component.css'],
   directives: [ProductDetailComponent, ProductCreateComponent],

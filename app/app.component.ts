@@ -6,6 +6,9 @@ import { ProductService } from './product/product.service';
 import { ProductsComponent } from './product/product.component';
 import { ProductDetailComponent } from './product/product-detail.component';
 import { ProductCreateComponent } from './product/product-create.component';
+
+import { CartService } from './cart/cart.service';
+
 import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesario
 
 
@@ -17,13 +20,14 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
       <a [routerLink]="['Dashboard']">Dashboard</a>
       <a [routerLink]="['Products']">Products</a>
     </nav>
-    <router-outlet></router-outlet>  
+    <div style="border: 1px solid black"><router-outlet></router-outlet></div>  
   `,
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, ProductsComponent],
   providers: [
     ROUTER_PROVIDERS, 
     provide(APP_BASE_HREF, { useValue: '/' }),
-    ProductService
+    ProductService,
+    CartService
   ],
   styleUrls: ['app/app.component.css']
 })
@@ -52,7 +56,7 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
   
 ])
 export class AppComponent {
-  title = 'Tour of Products';
+  title = 'Ecommerce';
   
 
  }
