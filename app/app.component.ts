@@ -12,6 +12,10 @@ import { CartService } from './cart/cart.service';
 import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesario
 
 
+import {LoginComponent} from './login.component';
+import {PrivateComponent} from './private.component';
+
+
 @Component({
   selector: 'my-app',
   template: `
@@ -22,7 +26,7 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
     </nav>
     <div style="border: 1px solid black"><router-outlet></router-outlet></div>  
   `,
-  directives: [ROUTER_DIRECTIVES, ProductsComponent],
+  directives: [LoginComponent, ROUTER_DIRECTIVES, ProductsComponent],
   providers: [
     ROUTER_PROVIDERS, 
     provide(APP_BASE_HREF, { useValue: '/' }),
@@ -32,11 +36,13 @@ import { APP_BASE_HREF } from '@angular/common'; // Checkear si esto es necesari
   styleUrls: ['app/app.component.css']
 })
 @RouteConfig([
+  { path: '/home', name: 'Home', component: PrivateComponent, useAsDefault:true },
+    { path: '/login', name: 'Login', component: LoginComponent },
   {
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardComponent,
-    useAsDefault: true
+    //useAsDefault: true
   },
   {
     path: '/detail/:id',
