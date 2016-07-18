@@ -9,7 +9,14 @@ export class CartService {
   constructor(public http: Http) { }
 
   getCart() {
-    return this.http.get('http://localhost:8000/api/carts/my_cart/');
+    var user = JSON.parse(localStorage.getItem('user'));
+    let headers = new Headers({
+       'Content-Type': 'application/json',
+       'Authorization': 'JWT ' + user['token']
+    });
+    let options = new RequestOptions({ headers: headers });
+    
+    return this.http.get('http://localhost:8000/api/carts/my_cart/', options)    
   }
 
 }

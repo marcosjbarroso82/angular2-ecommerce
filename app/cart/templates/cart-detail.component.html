@@ -5,9 +5,24 @@
         <label>id: </label>{{cart.id}}
     </li>
     <li>
-      <label>user: </label>
-      <input [(ngModel)]="cart.user" placeholder="user" />  
+      <label>user: </label>{{ cart.user }}        
     </li>
   </ul>
+  <h3>Items</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>quantity</th>
+      <th>available_stock</th>
+      <th>update</th>
+    </tr>
+    <tr *ngFor="let item of cart.items">
+      <td>{{ item.product.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.product.available_stock }}</td>
+      <td><button>update</button></td>
+    </tr>
+  </table>
+  
   <button (click)="goBack()">Back</button>
 </div>

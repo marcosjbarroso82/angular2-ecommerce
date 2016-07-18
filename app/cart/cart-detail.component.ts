@@ -24,6 +24,10 @@ export class CartDetailComponent implements OnInit {
       .subscribe(response => this.cart = response.json());
   }
 
+  json_representatio(obj) {
+    return JSON.stringify(obj);
+  }
+
   goBack() {
     window.history.back();
   }
