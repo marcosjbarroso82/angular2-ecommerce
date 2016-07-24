@@ -21,6 +21,7 @@ import {PrivateComponent} from './private.component';
   template: `
     <h1>{{title}}</h1>
     <nav>
+      <a [routerLink]="['Home']">Home</a>
       <a [routerLink]="['Dashboard']">Dashboard</a>
       <a [routerLink]="['Products']">Products</a>
     </nav>
