@@ -17,9 +17,8 @@ import 'rxjs/add/operator/concat';
   styleUrls: ['/app/cart/css/cart-detail.component.css']
 })
 export class CartDetailComponent implements OnInit {
-  @Input() cart: Cart;
 
-  private items: CartItem[];
+  items$: Observable<CartItem[]>;
 
   constructor(
     private _cartService: CartService,
@@ -27,37 +26,16 @@ export class CartDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('CartDetailComponent ngOnInit ');
-
-    const items$ = this._cartService.loadItems();
-    items$.subscribe(
-      items => {
-        this.items = items;
-        console.log(items);
-      },
-      error => console.log(error)
-    ); 
+    this.items$ = this._cartService.items$;
+    this._cartService.loadItems();    
   }
 
-  removeItem(id) {
-    
-     this._cartService.removeItem(id).subscribe(
-       response => this._cartService.loadItems().subscribe(
-        items => {
-          this.items = items;
-          console.log(items);
-        },
-        error => console.log(error)
-      ),
-      error => console.log(error)
-     );
+  removeItem(id) {    
+     this._cartService.removeItem(id);     
   }
 
   loadItems(){
-    console.log('CartDetailComponent loadItems ');
-
-   this._cartService.loadItems();
-    
+    this._cartService.loadItems();    
   }
 
   json_representation(obj) {

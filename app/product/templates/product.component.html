@@ -10,13 +10,13 @@
   </tr>
 <tbody class="product">
   <tr *ngFor="let product of products"
-    [class.selected]="product === selectedProduct"
-    >
+    [class.selected]="product === selectedProduct">
 
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.available_stock}}</td>
     <td><button (click)="onSelect(product)">select</button></td>
+    <td><button (click)="addToCart()">Add To Cart</button></td>
 
   </tr>
 </tbody>

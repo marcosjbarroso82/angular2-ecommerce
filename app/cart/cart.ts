@@ -6,4 +6,5 @@ export class Cart {
 export class CartItem {
   id: number;
   quantity: number;
+  product: number;
 }

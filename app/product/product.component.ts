@@ -6,6 +6,9 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductCreateComponent } from './product-create.component';
 import { OnInit }              from '@angular/core';
 import { ProductService }         from './product.service';
+import { CartService } from '../cart/cart.service';
+import { Cart } from '../cart/cart';
+import { CartItem } from '../cart/cart';
 
 @Component({
   selector: 'product-list',
@@ -22,7 +25,15 @@ export class ProductsComponent implements OnInit {
   constructor(
     public http: Http,
     private _router: Router,
-    private _productService: ProductService) { 
+    private _productService: ProductService,
+    private _cartService: CartService) { 
+  }
+
+  addToCart() {
+    let item = new CartItem();
+    item.quantity = 2;
+    item.product = 1;
+    this._cartService.addItem(item);    
   }
 
   getProducts() {
