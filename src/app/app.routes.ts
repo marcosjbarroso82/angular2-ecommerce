@@ -9,6 +9,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProductDetailComponent} from './product/product-detail.component';
 import {ProductCreateComponent} from './product/product-create.component';
 
+import { DynamicFormDemoComponent } from './dynamicForm/dinamic-form-demo.component';
+
 
 
 
@@ -18,6 +20,8 @@ const APP_ROUTES: RouterConfig = [
   { path: 'private',  component: PrivateComponent },
   { path: 'templateform',  component: TemplateFormComponent },
   { path: 'modelform',     component: ModelFormComponent    },
+
+  { path: 'dynamic-form-demo',     component: DynamicFormDemoComponent    },
 
   { path: 'home', component: PrivateComponent},
   { path: 'login', component: LoginComponent },
