@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+//import { RouteParams } from '@angular/router-deprecated';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
@@ -13,8 +13,9 @@ export class ProductCreateComponent implements OnInit {
   product: Product;
 
   constructor(
-    private _productService: ProductService,
-    private _routeParams: RouteParams) {
+    private _productService: ProductService
+    //private _routeParams: RouteParams
+    ) {
   }
 
   ngOnInit() {

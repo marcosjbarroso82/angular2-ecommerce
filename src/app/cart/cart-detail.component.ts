@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+//import { RouteParams } from '@angular/router-deprecated';
 
 import { Cart } from './cart';
 import { CartItem } from './cart';
@@ -21,8 +21,9 @@ export class CartDetailComponent implements OnInit {
   items$: Observable<CartItem[]>;
 
   constructor(
-    private _cartService: CartService,
-    private _routeParams: RouteParams) {
+    private _cartService: CartService
+    //private _routeParams: RouteParams
+    ) {
   }
 
   ngOnInit() {

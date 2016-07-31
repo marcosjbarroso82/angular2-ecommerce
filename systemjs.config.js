@@ -16,6 +16,20 @@
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
   };
+    var ngPackageNames = [
+    '@angular/common',
+    '@angular/compiler',
+    '@angular/core',
+    '@angular/http',
+    '@angular/forms',
+    '@angular/platform-browser',
+    '@angular/platform-browser-dynamic',
+    '@angular/router',
+    //'@angular/router-deprecated',
+    '@angular/testing',
+    '@angular/upgrade',
+  ];
+  /*
   var ngPackageNames = [
     'common',
     'compiler',
@@ -27,6 +41,7 @@
     'router-deprecated',
     'upgrade',
   ];
+  */
   // Individual files (~300 requests):
   function packIndex(pkgName) {
     packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };

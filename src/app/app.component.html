@@ -1,0 +1,32 @@
+<div class="container">
+ 
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a href="#/"><img src="images/angular.png" class="logo" /></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a [routerLink]="['/basicform']">Basic Template Form</a>
+      </li>
+      <li>
+        <a [routerLink]="['/templateform']">Template Driven Form</a>
+      </li>
+      <li>
+        <a [routerLink]="['/modelform']">Model Driven Form</a>
+      </li>
+      
+      <li>
+        <a [routerLink]="['/home']">home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard']">dashboard</a>
+      </li>
+
+
+
+    </ul>
+  </nav>
+  
+  <router-outlet></router-outlet>
+  
+</div>

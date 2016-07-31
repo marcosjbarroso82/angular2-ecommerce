@@ -3,7 +3,8 @@ import {AuthenticationService, User} from './authentication.service'
 
 import { Http, HTTP_PROVIDERS } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
-import { Router  } from '@angular/router-deprecated';
+//import { Router  } from '@angular/router-deprecated';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -65,7 +66,7 @@ export class LoginComponent {
                 this.user['token'] = response['token'];
                 
                 localStorage.setItem("user",JSON.stringify(this.user));
-                this._router.navigate(['Home']);    
+                this._router.navigate(['home']);    
             },
             error => {
                 console.log("error " + error);

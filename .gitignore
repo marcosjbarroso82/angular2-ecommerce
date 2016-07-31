@@ -3,4 +3,6 @@ node_modules
 typings
 app/**/*.js
 app/**/*.map
+src/**/*.js
+src/**/*.map
 .vscode

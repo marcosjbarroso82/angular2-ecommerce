@@ -1,5 +1,5 @@
 import { Component }           from '@angular/core';
-import { Router  }             from '@angular/router-deprecated';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
 import { Product }                from './product';
 import { ProductDetailComponent } from './product-detail.component';
@@ -50,10 +50,11 @@ export class ProductsComponent implements OnInit {
   }
 
   gotoCreate() {
-    this._router.navigate(['ProductCreate']);
+    this._router.navigate(['/create']);
   }
 
   gotoDetail() {
-    this._router.navigate(['ProductDetail', { id: this.selectedProduct.id }]);
+    console.log("implement");
+    this._router.navigate(['/detail', this.selectedProduct.id ]);
   }
 }
